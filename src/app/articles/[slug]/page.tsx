@@ -1,17 +1,18 @@
 import ImageCarousel from "@/app/components/ImageCarousel";
 import DeadEnd from "@/app/not-found";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { getAllArticles, getArticle } from "../../../../lib/articles";
+import {
+  allPortfolioArticles,
+  specificArticle,
+} from "../../../../lib/articles";
 import { PortfolioArticle } from "./types";
 
 export async function generateStaticParams() {
-  const allArticles = await getAllArticles();
+  const allArticles = await allPortfolioArticles();
   return allArticles.map((article: PortfolioArticle | null) => ({
     slug: article?.slug || "",
   }));
 }
-
-// Found this solution on github since my build fatally failed lol https://github.com/vercel/next.js/discussions/62104
 
 export default async function PortfolioPostPage({
   params,
@@ -19,7 +20,7 @@ export default async function PortfolioPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article: PortfolioArticle | null = await getArticle(slug);
+  const article: PortfolioArticle | null = await specificArticle(slug);
 
   if (!article) {
     return <DeadEnd />;

@@ -1,13 +1,13 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
-import { getHomeItems } from "../../lib/home";
+import { homeItems } from "../../lib/home";
 import { HomeType } from "../../lib/types";
 import DeadEnd from "./not-found";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { BsGithub } from "react-icons/bs";
 
 export default async function Home() {
-  const items = await getHomeItems();
+  const items = await homeItems();
 
   if (!items) {
     return <DeadEnd />;
@@ -26,7 +26,7 @@ export default async function Home() {
               </a>
               <p>/</p>
               <a
-                href="https://github.com/aliciaosv"
+                href="https://github.com/sirialicia-g"
                 target="_blank"
                 className="contact-link"
               >
