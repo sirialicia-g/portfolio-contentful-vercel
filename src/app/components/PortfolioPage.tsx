@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// I'm anticipating the masonry code to be quite bulky in the global file, and not meant to be anywhere else, I wanted to try out a modular way of writing css (since I despise messy and huge css files with all of my heart) I've stumbled across here https://nextjs.org/docs/app/building-your-application/styling
 import styles from "../styles/masonry.module.css";
 import { PortfolioArticle } from "../portfolio/types";
 import TagFilter from "../components/TagFilter";
