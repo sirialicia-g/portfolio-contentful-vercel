@@ -1,10 +1,10 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { getContactItems } from "../../../lib/contact";
+import { contactItems } from "../../../lib/contact";
 import { ContactType } from "./types";
 import { BsEnvelope, BsGithub, BsLinkedin } from "react-icons/bs";
 
 export default async function Contact() {
-  const items = await getContactItems();
+  const items = await contactItems();
 
   return (
     <section className="default-section">

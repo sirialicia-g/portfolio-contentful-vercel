@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { get404Items } from "../../lib/notFound";
+import { deadEndItems } from "../../lib/notFound";
 import { NotFoundType } from "../../lib/types";
 
 export default async function DeadEnd() {
-  const items = await get404Items();
-  console.log("items: ", items);
+  const items = await deadEndItems();
 
   return (
     <section className="default-section">

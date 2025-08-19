@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-// I use React Slicks library to enable the carousel https://react-slick.neostack.com/
 
 const Slider = dynamic(() => import("react-slick"), { ssr: true });
 
